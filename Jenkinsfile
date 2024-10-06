@@ -13,7 +13,7 @@ pipeline {
         // Stage 1: Checkout code from Git
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Sehar-Aejaz/DevOps_App_'
+                git branch: 'main', url: 'https://github.com/Sehar-Aejaz/DevOps_App'
             }
         }
 
@@ -49,8 +49,8 @@ pipeline {
                 script {
                   
                     sh '''
-                        docker build -t Jenkins-HD:test .
-                        docker run -d -p 3000:3000 Jenkins-HD:test
+                        docker build -t DevOps_App:test .
+                        docker run -d -p 3000:3000 DevOps_App:test
                     '''
                     
                 }
@@ -63,8 +63,8 @@ pipeline {
                 script {
                     // Release to production environment
                     sh '''
-                        docker tag Jenkins-HD:test Jenkins-HD:latest
-                        docker push Jenkins-HD:latest
+                        docker tag DevOps_App:test DevOps_App:latest
+                        docker push DevOps_App:latest
                     '''
                     
                 }
