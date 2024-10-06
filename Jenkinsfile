@@ -58,7 +58,7 @@ pipeline {
         }
 
         // Stage 6: Release to production 
-        /*stage('Release to Production') {
+        stage('Release to Production') {
             steps {
                 script {
                     // Release to production environment
@@ -69,7 +69,7 @@ pipeline {
                     
                 }
             }
-        }*/
+        }
     }
 
     post {
